@@ -1,0 +1,7 @@
+[user]
+	name = jtmonedero
+	email = jtmonedero@eservicios.indra.es
+[credential]
+	helper = store
+[core]
+	editor = vim
