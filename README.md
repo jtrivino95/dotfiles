@@ -1,45 +1,45 @@
-# Mis Dotfiles
+# My Dotfiles
 
-Este repositorio contiene mis configuraciones personales (dotfiles) para varios programas, gestionado para ser fácilmente portable a nuevas instalaciones.
+This repository contains my personal configuration files (dotfiles) for various programs, managed to be easily portable to new installations.
 
-## Contenido
+## Contents
 
-Actualmente, el repositorio incluye:
+Currently, the repository includes:
 
 ### Arandr
 
-*   **Ubicación en el repo:** `/.screenlayout/` y `/.local/share/applications/`
-*   **Descripción:** Contiene scripts para diferentes configuraciones de pantalla generadas con Arandr y los ficheros `.desktop` para lanzarlas cómodamente desde un menú de aplicaciones.
-*   **Perfiles disponibles:**
-    *   `laptop-only`: Solo la pantalla del portátil.
-    *   `2-screen`: Configuración de dos monitores.
-    *   `3-screen`: Configuración de tres monitores.
-    *   `main-screen`: Pantalla principal externa.
+*   **Repo Location:** `/.screenlayout/` and `/.local/share/applications/`
+*   **Description:** Contains scripts for different screen configurations generated with Arandr and the `.desktop` files to launch them comfortably from an application menu.
+*   **Available Profiles:**
+    *   `laptop-only`: Laptop screen only.
+    *   `2-screen`: Two-monitor setup.
+    *   `3-screen`: Three-monitor setup.
+    *   `main-screen`: Main external screen.
 
-## Instalación
+## Installation
 
-Para instalar estas configuraciones en un nuevo sistema, sigue estos pasos.
+To install these configurations on a new system, follow these steps.
 
-1.  **Clona el repositorio en tu home:**
+1.  **Clone the repository to your home directory:**
     ```bash
     git clone https://github.com/jtrivino95/dotfiles.git ~/dotfiles
     ```
 
-2.  **Crea los enlaces simbólicos:**
-    El siguiente comando enlazará los archivos de configuración del repositorio a las ubicaciones donde los programas esperan encontrarlos.
+2.  **Create the symbolic links:**
+    The following command will link the configuration files from the repository to the locations where the programs expect to find them.
 
     ```bash
-    # Crear directorios de destino si no existen
+    # Create destination directories if they don't exist
     mkdir -p ~/.screenlayout
     mkdir -p ~/.local/share/applications
 
-    # Enlazar scripts de Arandr
+    # Link Arandr scripts
     ln -s ~/dotfiles/.screenlayout/*.sh ~/.screenlayout/
 
-    # Enlazar accesos directos
+    # Link shortcuts
     ln -s ~/dotfiles/.local/share/applications/*.desktop ~/.local/share/applications/
     ```
 
-## Uso
+## Usage
 
-Una vez instalados, los perfiles de pantalla deberían aparecer en el menú de aplicaciones de tu entorno de escritorio gracias a los archivos `.desktop`, permitiendo un cambio rápido de configuración.
+Once installed, the screen profiles should appear in your desktop environment's application menu thanks to the `.desktop` files, allowing for a quick configuration change.
