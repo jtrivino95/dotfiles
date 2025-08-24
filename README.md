@@ -6,18 +6,19 @@ A collection of my personal configuration files (dotfiles). This repository help
 
 This repository contains configurations for the following tools:
 
--   **Zsh**:
-    -   `.zshrc`: Main configuration file for the Zsh shell.
-    -   `.p10k.zsh`: Theme configuration for the Powerlevel10k prompt.
--   **Git**:
-    -   `.gitconfig`: Global Git configuration (user, aliases, etc.).
--   **Arandr**:
-    -   Screen layout scripts located in `/.screenlayout/`.
-    -   `.desktop` shortcuts in `/.local/share/applications/` to launch layouts from an app menu.
--   **Visual Studio Code**:
-    -   `vscode/settings.json`: User settings for the editor.
+-   **Zsh**: Main configuration via `.zshrc`.
+-   **Oh My Zsh**: Installed automatically.
+-   **Antigen**: Zsh plugin manager, installed automatically.
+-   **Powerlevel10k**: Theme configuration via `.p10k.zsh`.
+-   **Git**: Global configuration via `.gitconfig`.
+-   **Arandr**: Screen layout scripts and `.desktop` shortcuts.
+-   **Tilix**: Terminal emulator profiles, stored in `tilix/`.
+-   **NVM**: Node Version Manager.
+-   **Fonts**: Installs the Agave Nerd Font.
 
 ## Installation
+
+The installation is automated via a single script.
 
 1.  **Clone the repository:**
     ```bash
@@ -25,12 +26,19 @@ This repository contains configurations for the following tools:
     ```
 
 2.  **Run the installation script:**
-    The `install.sh` script will create symbolic links from your home directory to the configuration files in this repository.
+    The script will ask for your password upfront to install system packages.
     ```bash
     cd ~/dotfiles
     ./install.sh
     ```
 
-## How It Works
+## What the Script Does
 
-This setup uses symbolic links (`symlinks`) to link the files from this repository to their actual locations (e.g., `~/.zshrc` is a link to `~/dotfiles/.zshrc`). This means you can edit the files in their normal locations, and the changes will be saved directly in this repository, ready to be committed.
+1.  **Installs Packages**: Uses `apt-get` to install `zsh`, `curl`, `git`, `fzf`, `tilix`, `trash-cli`, `arandr`, and `command-not-found`.
+2.  **Installs Fonts**: Downloads and installs the Agave Nerd Font.
+3.  **Installs Frameworks**: Sets up Oh My Zsh, Antigen, and NVM.
+4.  **Applies Configurations**: 
+    -   Loads the Tilix profiles.
+    -   Creates symbolic links for `.zshrc`, `.p10k.zsh`, `.gitconfig`, and Arandr scripts.
+
+After running, restart your terminal or log out and back in for all changes to take effect.
