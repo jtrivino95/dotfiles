@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=main-screen
+Comment=Activate main-screen layout
+Exec=/home/jtrivino/.screenlayout/main-screen.sh
+Icon=video-display
+Terminal=false
+Categories=Utility;

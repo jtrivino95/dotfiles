@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=laptop-only
+Comment=Activate laptop-only layout
+Exec=/home/jtrivino/.screenlayout/laptop-only.sh
+Icon=video-display
+Terminal=false
+Categories=Utility;

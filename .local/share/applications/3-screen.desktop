@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=3-screen
+Comment=Activate 3-screen layout
+Exec=/home/jtrivino/.screenlayout/3-screen.sh
+Icon=video-display
+Terminal=false
+Categories=Utility;
