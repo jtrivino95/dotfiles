@@ -11,7 +11,7 @@ This repository contains configurations for the following tools:
 -   **Antigen**: Zsh plugin manager, installed automatically.
 -   **Powerlevel10k**: Theme configuration via `.p10k.zsh`.
 -   **Git**: Global configuration via `.gitconfig`.
--   **Arandr**: Screen layout scripts and `.desktop` shortcuts.
+-   **Arandr**: Screen layout scripts (e.g., `2-laptop-screen.sh`) and associated `.desktop` shortcuts.
 -   **Tilix**: Terminal emulator profiles, stored in `tilix/`.
 -   **NVM**: Node Version Manager.
 -   **Fonts**: Installs the Agave Nerd Font.
