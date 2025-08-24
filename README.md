@@ -1,45 +1,36 @@
 # My Dotfiles
 
-This repository contains my personal configuration files (dotfiles) for various programs, managed to be easily portable to new installations.
+A collection of my personal configuration files (dotfiles). This repository helps me quickly set up a new machine with my preferred settings.
 
-## Contents
+## What's Inside?
 
-Currently, the repository includes:
+This repository contains configurations for the following tools:
 
-### Arandr
-
-*   **Repo Location:** `/.screenlayout/` and `/.local/share/applications/`
-*   **Description:** Contains scripts for different screen configurations generated with Arandr and the `.desktop` files to launch them comfortably from an application menu.
-*   **Available Profiles:**
-    *   `laptop-only`: Laptop screen only.
-    *   `2-screen`: Two-monitor setup.
-    *   `3-screen`: Three-monitor setup.
-    *   `main-screen`: Main external screen.
+-   **Zsh**:
+    -   `.zshrc`: Main configuration file for the Zsh shell.
+    -   `.p10k.zsh`: Theme configuration for the Powerlevel10k prompt.
+-   **Git**:
+    -   `.gitconfig`: Global Git configuration (user, aliases, etc.).
+-   **Arandr**:
+    -   Screen layout scripts located in `/.screenlayout/`.
+    -   `.desktop` shortcuts in `/.local/share/applications/` to launch layouts from an app menu.
+-   **Visual Studio Code**:
+    -   `vscode/settings.json`: User settings for the editor.
 
 ## Installation
 
-To install these configurations on a new system, follow these steps.
-
-1.  **Clone the repository to your home directory:**
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/jtrivino95/dotfiles.git ~/dotfiles
     ```
 
-2.  **Create the symbolic links:**
-    The following command will link the configuration files from the repository to the locations where the programs expect to find them.
-
+2.  **Run the installation script:**
+    The `install.sh` script will create symbolic links from your home directory to the configuration files in this repository.
     ```bash
-    # Create destination directories if they don't exist
-    mkdir -p ~/.screenlayout
-    mkdir -p ~/.local/share/applications
-
-    # Link Arandr scripts
-    ln -s ~/dotfiles/.screenlayout/*.sh ~/.screenlayout/
-
-    # Link shortcuts
-    ln -s ~/dotfiles/.local/share/applications/*.desktop ~/.local/share/applications/
+    cd ~/dotfiles
+    ./install.sh
     ```
 
-## Usage
+## How It Works
 
-Once installed, the screen profiles should appear in your desktop environment's application menu thanks to the `.desktop` files, allowing for a quick configuration change.
+This setup uses symbolic links (`symlinks`) to link the files from this repository to their actual locations (e.g., `~/.zshrc` is a link to `~/dotfiles/.zshrc`). This means you can edit the files in their normal locations, and the changes will be saved directly in this repository, ready to be committed.
