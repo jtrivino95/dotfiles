@@ -17,7 +17,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 install_packages() {
     print_header "Installing APT packages..."
     sudo apt-get update
-    sudo apt-get install -y zsh curl wget git fzf tilix trash-cli arandr command-not-found
+    sudo apt-get install -y zsh curl wget git fzf tilix trash-cli arandr command-not-found ssh-askpass
     sudo apt-get install -y unzip # Needed for fonts
 
     # Fix for command-not-found if it fails

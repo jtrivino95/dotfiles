@@ -1,2 +1,2 @@
 alias tp=trash
-alias g='gemini'
+alias g='SUDO_ASKPASS=/usr/bin/ssh-askpass gemini'
