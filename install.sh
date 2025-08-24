@@ -94,4 +94,4 @@ install_fonts
 install_frameworks
 setup_configs
 
-echo -e "\n\e[1;32mInstallation complete! Please restart your terminal or log out and back in for all changes to take effect.\e[0m"
+echo -e "\n\e[1;32mInstallation complete! Please restart your terminal or log out and back in for all changes to take effect. Remember to switch to X11 desktop on Ubuntu.\e[0m"
