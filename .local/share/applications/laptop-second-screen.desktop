@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=laptop-second
+Comment=Activate laptop-second-screen layout
+Exec=/home/jtrivino/.screenlayout/laptop-second-screen.sh
+Icon=video-display
+Terminal=false
+Categories=Utility;

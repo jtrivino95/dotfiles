@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=laptop-main-screen
+Comment=Activate laptop-main-screen layout
+Exec=/home/jtrivino/.screenlayout/laptop-main-screen.sh
+Icon=video-display
+Terminal=false
+Categories=Utility;

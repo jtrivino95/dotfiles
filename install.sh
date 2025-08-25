@@ -88,7 +88,7 @@ setup_configs() {
     mkdir -p ~/.screenlayout
     ln -sfv "$DOTFILES_DIR/.screenlayout/"* ~/.screenlayout
     mkdir -p ~/.local/share/applications
-    ln -sfv "$DOTFILES_DIR/.local/share/applications/"*screen*.desktop ~/.local/share/applications
+    ln -sfv "$DOTFILES_DIR/.local/share/applications/"*.desktop ~/.local/share/applications
 
     # --- Tilix ---
     echo "Loading Tilix configuration..."
@@ -100,9 +100,17 @@ setup_configs() {
 }
 
 # --- Main Execution ---
-install_packages
-install_fonts
-install_frameworks
-setup_configs
+for function in install_packages install_fonts install_frameworks setup_configs; do
+    read -p "Do you want to execute '$function'? (y/n): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        $function
+    fi
+done
+
+#install_packages
+#install_fonts
+#install_frameworks
+#setup_configs
 
 echo -e "\n\e[1;32mInstallation complete! Please restart your terminal or log out and back in for all changes to take effect. Remember to switch to X11 desktop on Ubuntu.\e[0m"

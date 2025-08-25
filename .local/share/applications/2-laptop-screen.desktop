@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=2-laptop-screen
-Exec=/home/jtrivino/.screenlayout/2-laptop-screen.sh
-Terminal=false
-Icon=display
