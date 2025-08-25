@@ -17,7 +17,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 install_packages() {
     print_header "Installing APT packages..."
     sudo apt-get update
-    sudo apt-get install -y zsh curl wget git fzf tilix trash-cli arandr command-not-found ssh-askpass
+    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop
     sudo apt-get install -y unzip # Needed for fonts
 
     # Fix for command-not-found if it fails
@@ -59,6 +59,17 @@ install_frameworks() {
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
     else
         echo "NVM is already installed."
+    fi
+
+    # Add tfenv installation
+    print_header "Installing tfenv (Terraform Version Manager)..."
+    if [ ! -d "$HOME/.tfenv" ]; then
+        git clone https://github.com/tfutils/tfenv.git "$HOME/.tfenv"
+        # Create symlinks in /usr/local/bin
+        sudo ln -sf "$HOME/.tfenv/bin/"* /usr/local/bin
+        echo "tfenv installed and symlinks created in /usr/local/bin."
+    else
+        echo "tfenv is already installed."
     fi
 }
 

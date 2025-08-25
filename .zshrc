@@ -36,6 +36,7 @@ antigen bundle git
 antigen bundle command-not-found
 antigen bundle z
 antigen bundle extract
+antigen bundle terraform
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 #antigen bundle joshskidmore/zsh-fzf-history-search

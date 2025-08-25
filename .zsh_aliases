@@ -1,2 +1,3 @@
 alias tp=trash
 alias g='SUDO_ASKPASS=/usr/bin/ssh-askpass gemini'
+alias gedit='gnome-text-editor'

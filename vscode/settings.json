@@ -1,4 +1,5 @@
 {
     "workbench.colorTheme": "Monokai Dimmed",
-    "terminal.integrated.defaultProfile.linux": "zsh"
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "files.autoSave": "afterDelay"
 }
