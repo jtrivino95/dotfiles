@@ -17,13 +17,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 install_packages() {
     print_header "Installing APT packages..."
     sudo apt-get update
-    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop
-    sudo apt-get install -y unzip # Needed for fonts
 
-    # Fix for command-not-found if it fails
-    if ! command -v command-not-found &> /dev/null; then
-        sudo apt-get install --reinstall command-not-found
-    fi
+    # Common packages
+    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop unzip
+
+    # Building dependencies
+    sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 }
 
 # --- 2. Font Installation ---
@@ -70,6 +69,15 @@ install_frameworks() {
         echo "tfenv installed and symlinks created in /usr/local/bin."
     else
         echo "tfenv is already installed."
+    fi
+
+    # Add pyenv installation
+    print_header "Installing pyenv (Python Version Manager)..."
+    if [ ! -d "$HOME/.pyenv" ]; then
+        git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
+        echo "pyenv installed."
+    else
+        echo "pyenv is already installed."
     fi
 }
 

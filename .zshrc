@@ -77,3 +77,11 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+# ------------------------------------------------------------------------------
+# pyenv configuration
+# ------------------------------------------------------------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"

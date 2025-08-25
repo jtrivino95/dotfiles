@@ -14,6 +14,7 @@ This repository contains configurations for the following tools:
 -   **Arandr**: Screen layout scripts (e.g., `2-laptop-screen.sh`) and associated `.desktop` shortcuts.
 -   **Tilix**: Terminal emulator profiles, stored in `tilix/`.
 -   **NVM**: Node Version Manager.
+-   **pyenv**: Python version manager.
 -   **Fonts**: Installs the Agave Nerd Font.
 
 ## Installation
@@ -36,7 +37,7 @@ The installation is automated via a single script.
 
 1.  **Installs Packages**: Uses `apt-get` to install `zsh`, `curl`, `git`, `fzf`, `tilix`, `trash-cli`, `arandr`, and `command-not-found`.
 2.  **Installs Fonts**: Downloads and installs the Agave Nerd Font.
-3.  **Installs Frameworks**: Sets up Oh My Zsh, Antigen, and NVM.
+3.  **Installs Frameworks**: Sets up Oh My Zsh, Antigen, NVM, and pyenv.
 4.  **Applies Configurations**: 
     -   Loads the Tilix profiles.
     -   Creates symbolic links for `.zshrc`, `.p10k.zsh`, `.gitconfig`, and Arandr scripts.
