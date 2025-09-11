@@ -16,11 +16,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ------------------------------------------------------------------------------
+# kubectl autocompletion
+# ------------------------------------------------------------------------------
+if command -v kubectl &> /dev/null; then
+  source <(kubectl completion zsh)
+fi
+
+# ------------------------------------------------------------------------------
 # Tilix VTE Configuration
 # https://gnunn1.github.io/tilix-web/manual/vteconfig/
 # ------------------------------------------------------------------------------
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 # ------------------------------------------------------------------------------
@@ -42,6 +49,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 #antigen bundle joshskidmore/zsh-fzf-history-search
 #antigen bundle lincheney/fzf-tab-completion
 antigen bundle Aloxaf/fzf-tab
+antigen bundle ahmetb/kubectx
 
 # Load the theme.
 #antigen theme robbyrussell
@@ -85,3 +93,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+# ------------------------------------------------------------------------------
+# gemini configuration
+# ------------------------------------------------------------------------------
+export GEMINI_API_KEY="$(cat ~/.gemini/api-key)"
+

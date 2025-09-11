@@ -1,3 +1,7 @@
 alias tp=trash
 alias g='SUDO_ASKPASS=/usr/bin/ssh-askpass gemini'
 alias gedit='gnome-text-editor'
+alias aptup='sudo apt update && sudo apt upgrade'
+alias k='kubectl'
+alias kx='kubectx'
+alias kn='kubens'

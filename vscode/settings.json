@@ -1,6 +1,21 @@
 {
-    "workbench.colorTheme": "Monokai Dimmed",
     "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.scrollback": 10000000,
     "files.autoSave": "afterDelay",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "terminal.integrated.automationProfile.linux": {
+
+
+        
+    },
+    "terminal.integrated.automationProfile.osx": {
+
+    },
+    "redhat.telemetry.enabled": false,
+    "aws.telemetry": false,
+    "vs-kubernetes": {
+        "vs-kubernetes.suppress-helm-not-found-alerts": true
+    }
 }
