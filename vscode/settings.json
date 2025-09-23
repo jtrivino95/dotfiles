@@ -6,16 +6,24 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmPasteNative": false,
     "terminal.integrated.automationProfile.linux": {
-
-
-        
     },
     "terminal.integrated.automationProfile.osx": {
-
     },
     "redhat.telemetry.enabled": false,
     "aws.telemetry": false,
     "vs-kubernetes": {
-        "vs-kubernetes.suppress-helm-not-found-alerts": true
+        "vs-kubernetes.suppress-helm-not-found-alerts": true,
+        "vscode-kubernetes.minikube-path-linux": "/home/jtrivino/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "workbench.iconTheme": "material-icon-theme",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.codeLens.enabled": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     }
 }

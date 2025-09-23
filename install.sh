@@ -19,10 +19,10 @@ install_packages() {
     sudo apt-get update
 
     # Common packages
-    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop unzip kubectx
+    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop unzip kubectx direnv
 
     # Building dependencies
-    sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+    sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git gpg libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 }
 
 # --- 2. Font Installation ---
@@ -47,10 +47,12 @@ install_frameworks() {
     fi
 
     print_header "Installing Antigen..."
-    # The user's .zshrc should contain the logic to source and use antigen.
-    # This just ensures the directory for clones exists.
-    mkdir -p "$HOME/.antigen"
-    curl -L git.io/antigen > "$HOME/.antigen/antigen.zsh"
+    if [ ! -d "$HOME/.antigen" ]; then
+        mkdir -p "$HOME/.antigen"
+        curl -L git.io/antigen > "$HOME/.antigen/antigen.zsh"
+    else
+	echo "Antigen is already installed."
+    fi
 
     print_header "Installing NVM (Node Version Manager)..."
     export NVM_DIR="$HOME/.nvm"
@@ -79,6 +81,18 @@ install_frameworks() {
     else
         echo "pyenv is already installed."
     fi
+
+    # Add granted installation
+    print_header "Installing granted..."
+    if [ ! -d "$HOME/.granted" ]; then
+	wget -O- https://apt.releases.commonfate.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/common-fate-linux.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/common-fate-linux.gpg] https://apt.releases.commonfate.io stable main" | sudo tee /etc/apt/sources.list.d/common-fate.list
+	sudo apt update && sudo apt install granted
+        echo "granted installed."
+    else
+        echo "granted is already installed."
+    fi
+
 }
 
 # --- 4. Symbolic Linking & Config Loading ---
@@ -105,6 +119,10 @@ setup_configs() {
     else
         echo "Tilix dconf file not found."
     fi
+
+    # --- Granted ---
+    granted browser set
+    granted completion -s zsh
 }
 
 # --- Main Execution ---
@@ -115,10 +133,5 @@ for function in install_packages install_fonts install_frameworks setup_configs;
         $function
     fi
 done
-
-#install_packages
-#install_fonts
-#install_frameworks
-#setup_configs
 
 echo -e "\n\e[1;32mInstallation complete! Please restart your terminal or log out and back in for all changes to take effect. Remember to switch to X11 desktop on Ubuntu.\e[0m"
