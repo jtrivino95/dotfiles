@@ -13,7 +13,8 @@
     "aws.telemetry": false,
     "vs-kubernetes": {
         "vs-kubernetes.suppress-helm-not-found-alerts": true,
-        "vscode-kubernetes.minikube-path-linux": "/home/jtrivino/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+        "vscode-kubernetes.minikube-path-linux": "/home/jtrivino/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.crd-code-completion": "enabled"
     },
     "workbench.secondarySideBar.defaultVisibility": "visible",
     "workbench.iconTheme": "material-icon-theme",
@@ -25,5 +26,28 @@
     },
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    }
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "terraform": false,
+        "yaml": true,
+        "python": false
+    },
+    "openshiftToolkit.execMaxBufferLength": 128,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "editor.fontSize": 15,
+    "terraform.mcp.server.enable": true
 }

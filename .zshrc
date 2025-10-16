@@ -105,7 +105,23 @@ export GEMINI_API_KEY="$(cat ~/.gemini/api-key)"
 eval "$(direnv hook zsh)"
 
 # ------------------------------------------------------------------------------
+# oc configuration
+# ------------------------------------------------------------------------------
+if [ $commands[oc] ]; then
+  oc completion zsh > "${fpath[1]}/_oc"
+fi
+
+if [ $commands[tailscale] ]; then
+  tailscale completion zsh > "${fpath[1]}/_tailscale"
+fi
+
+# ------------------------------------------------------------------------------
 # granted configuration
 # ------------------------------------------------------------------------------
-export GRANTED_ENABLE_AUTO_REASSUME=true
+#export GRANTED_ENABLE_AUTO_REASSUME=true
+#fpath=(/home/jtrivino/.granted/zsh_autocomplete/assume/ $fpath)
+#fpath=(/home/jtrivino/.granted/zsh_autocomplete/granted/ $fpath)
+alias assume="source assume"
 
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/.p10k.zsh.
+[[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
