@@ -14,11 +14,11 @@
     "vs-kubernetes": {
         "vs-kubernetes.suppress-helm-not-found-alerts": true,
         "vscode-kubernetes.minikube-path-linux": "/home/jtrivino/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
-        "vs-kubernetes.crd-code-completion": "enabled"
+        "vs-kubernetes.crd-code-completion": "enabled",
+        "vs-kubernetes.ignore-recommendations": true
     },
     "workbench.secondarySideBar.defaultVisibility": "visible",
     "workbench.iconTheme": "material-icon-theme",
-    "github.copilot.nextEditSuggestions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "gitlens.codeLens.enabled": false,
     "[yaml]": {
@@ -41,13 +41,34 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "terraform": false,
+        "terraform": true,
         "yaml": true,
-        "python": false
+        "python": false,
+        "ansible": true
     },
     "openshiftToolkit.execMaxBufferLength": 128,
     "gitlens.ai.model": "vscode",
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "editor.fontSize": 15,
-    "terraform.mcp.server.enable": true
+    "terraform.mcp.server.enable": true,
+    "geminicodeassist.project": "fit-name-7xnz0",
+    "git.autofetch": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "geminicodeassist.enableTelemetry": false,
+    "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
+    "geminicodeassist.updateChannel": "Default",
+    "geminicodeassist.inlineSuggestions.suggestionSpeed": "Fast",
+    "geminicodeassist.inlineSuggestions.enableAuto": true,
+    "diffEditor.codeLens": true,
+    "window.newWindowDimensions": "maximized",
+    "remote.SSH.configFile": "/home/jtrivino/ssh_config",
+    "cSpell.userWords": [
+        "implantacion",
+        "JUMPHOST",
+        "NODEPORT",
+        "velero"
+    ],
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.suggest.enabled": false,
 }

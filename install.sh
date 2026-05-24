@@ -19,7 +19,7 @@ install_packages() {
     sudo apt-get update
 
     # Common packages
-    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop unzip kubectx direnv
+    sudo apt-get install -y zsh curl wget git fzf command-not-found tilix trash-cli arandr ssh-askpass htop unzip kubectx direnv ffmpeg
 
     # Building dependencies
     sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git gpg libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
