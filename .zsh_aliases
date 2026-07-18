@@ -1,5 +1,5 @@
 alias tp=trash
-alias g='SUDO_ASKPASS=/usr/bin/ssh-askpass gemini'
+alias g='agy'
 alias gedit='gnome-text-editor'
 alias aptup='sudo apt update && sudo apt upgrade'
 alias k='kubectl'
@@ -15,3 +15,5 @@ alias netskope-start='sudo systemctl start stagentd.service && systemctl --user 
 alias netskope-stop='systemctl --user stop stagentapp.service && sudo systemctl stop stagentd.service'
 alias forti-start='sudo systemctl start forticlient.service'
 alias forti-stop='sudo systemctl stop forticlient.service'
+alias bastion='f() { ssh -i ~/.ssh/$1-bastion-key ec2-user@bastion.$1.indramind-openshift.internal }; f'
+
